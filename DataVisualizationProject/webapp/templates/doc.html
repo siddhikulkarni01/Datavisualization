@@ -1,0 +1,144 @@
+{% extends 'commonheader.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            padding: 0;
+            background-color: #fffcfc;
+        }
+        .container {
+            max-width: 800px;
+            margin-left: 30%;
+            margin-right: 30%;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 1000px;
+        }
+
+        header {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-left: 20%;
+            margin-right: 10%;
+        }
+
+        p {
+            color: #555;
+            margin-left: 20%;
+            margin-right: 10%;
+        }
+
+        img {
+            max-width: 50%;
+            height: auto;
+            margin-top: 10px;
+            margin-left: 20%;
+            margin-right: 10%;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Website!</h1>
+    </header>
+    <div class="container"></div>
+
+        <h2>Pie Chart</h2><br>
+        <p>A pie chart (or a circle chart) is a circular statistical graphic which is divided into slices to
+             illustrate numerical proportion. In a pie chart, the arc length of each slice (and consequently its
+              central angle and area) is proportional to the quantity it represents. While it is named for its 
+              resemblance to a pie which has been sliced, there are variations on the way it can be presented.
+               The earliest known pie chart is generally credited to William Playfair's Statistical Breviary of 1801.
+
+            Pie charts are very widely used in the business world and the mass media.
+             Pie charts can be replaced in most cases by 
+             other plots such as the bar chart, box plot, dot plot, etc. </p>  <br>  
+             <img src="{% static 'piechart.png' %}" alt="Bar Chart 1" style="width:100%"><br><hr><br>
+        <h2> Line chart</h2><br>
+        <p>A line chart or line graph, also known as curve chart,[1] is a type of chart which displays information as a 
+        series of data points called 'markers' connected by straight line segments.[2] It is a basic type of 
+        chart common in many fields. It is similar to a scatter plot except that the measurement points are
+         ordered (typically by their x-axis value) and joined with straight line segments. 
+         A line chart is often used to visualize a trend in data over intervals of time – a time series
+          – thus the line is often drawn chronologically. In these cases they are known as run charts.</p><br>
+          
+        <img src="{% static 'line.png' %}" alt="Area Chart" style="width:100%"><br><hr><br>
+        <h2> Area chart</h2><br>
+        <p>
+            An area chart or area graph displays graphically quantitative data. It is based on the line chart. 
+            The area between axis and line are commonly emphasized with colors, textures and hatchings. 
+            Commonly one compares two or more quantities with an area chart.
+        </p><br>
+        <img src="{% static 'area.png' %}" alt="Area Chart" style="width:100%"><br><hr><br>
+        <h2>Bar Chart</h2><br>
+        <p>A bar chart or bar graph is a chart or graph that presents categorical data with rectangular bars with heights 
+            or lengths proportional to the values that they represent. The bars can be plotted vertically or horizontally.
+            A vertical bar chart is sometimes called a column chart.A bar graph shows comparisons among discrete 
+            categories. One axis of the chart shows the specific categories being compared, and the other axis
+             represents a measured value. Some bar graphs present bars clustered in groups of more than one, 
+             showing the values of more than one measured variable.</p><br>
+        <img src="{% static 'barchart1.png' %}" alt="Bar Chart 1" style="width:100%"><br><hr><br>
+
+        <h2>Column Chart</h2><br>
+        <p>A column chart is a method of displaying data with categories represented by a rectangle—sometimes
+             called vertical bar charts. They allow easy comparisons among a number of items and trends analysis. 
+             In general, statistics and figures are difficult to understand when presented in tables or written
+              format. Column charts make things easy, immediate, and understandable.
+            A column chart is distinct from a bar chart. While a bar chart plots the variable horizontally and 
+            the fixed dimension vertically, the column chart does the opposite. However, most people don’t make 
+            the distinction, and refer to column and bar charts interchangeably.</p><br>
+        <img src="{% static 'columnChart.png' %}" alt="Area Chart" style="width:100%"><br><hr><br>
+        
+        <h2>Doughnut Chart</h2><br>
+        <p>A donut chart, in its simplest form, is a pie chart with its center cut out to look like a donut. 
+            At first glance, this may not seem to serve a much greater purpose than to create aesthetic variety. 
+            However, a donut chart helps avoid confusion around the area parameter that often trips people up in
+             a pie chart.When looking at a pie chart, it is easy to confuse the area of each slide with the entire 
+             pie and make deductions based on this visual cue. Instead, in a donut chart, the center is removed,
+              which encourages the reader to focus on the length of the arc instead, and not compare it with the
+               total area a circle would represent.</p><br><hr><br>
+        <img src="{% static 'doughnutchart.png' %}" alt="Bar Chart 1" style="width:100%">
+        <h2>Step Chart</h2><br>
+        <p>A Step chart is a Line chart that does not use the
+            shortest distance to connect two data points. Instead, it uses vertical
+            and horizontal lines to connect the data points in a series forming a
+            step-like progression. The vertical parts of a Step chart denote changes
+            in the data and their magnitude. The horizontal parts of a Step chart
+            denote the constancy of the data. Step charts are commonly used in
+            various fields, including finance, engineering, economics, and any do-
+            main where data changes are discrete rather than continuous. They
+            are particularly helpful when showing trends that occur at specific
+            points in time or within ordered categories.
+            
+             </p>  <br>  
+             <img src="{% static 'stepchart.jpg' %}" alt="Bar Chart 1" style="width:100%"><br><hr><br>
+        </div>
+    
+
+</body>
+</html>
+{% endblock %}

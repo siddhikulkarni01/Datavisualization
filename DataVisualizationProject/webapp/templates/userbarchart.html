@@ -1,0 +1,63 @@
+<!-- index.html -->
+{% extends 'userheader.html' %}
+{{usertype}}
+{% block content %}
+{% load static %}
+<html>
+<head>
+<script>
+    window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer", {
+          theme: "light2",
+          animationEnabled: true,
+          exportEnabled: true,
+          title:{
+            text:"Displaying Bar Chart"
+          },
+          subtitles: [{
+            text: " Count"
+          }],
+          axisY2: [{
+            suffix: "",
+            labelAngle: 0,
+            labelMaxWidth: 2500,
+            lineThickness: 1
+          }],
+          axisX: {
+            reversed: true
+          },
+          data: [{
+            type: "bar",
+            yValueFormatString: "#.00",
+            axisYType: "secondary",
+            dataPoints: {{ bardata|safe }}
+          }]
+        });
+        chart.render();
+
+    }
+</script>
+<style>
+  .highlighted-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(78, 34, 181);
+    color: white;
+    text-decoration: none;
+    margin-right: 30px;
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  </style>
+</head>
+<body>
+    <div id="chartContainer" style="width: 100%; height: 360px;"></div>
+    <script src="{% static 'canvasjs.min.js' %}"></script>
+    <div class="text-right">
+      <a href="/adminmainpage/" class="highlighted-link">Back</a>
+    </div>
+</body>
+</html>
+{% endblock %}

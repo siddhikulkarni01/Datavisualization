@@ -1,0 +1,75 @@
+{% extends 'commonheader.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+       
+  /*background: #e35869;*/
+  background-image:url('{% static 'main1.jpg' %}');
+  font-family: 'Rubik', sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+    }
+
+
+    
+    .d1{
+        background-image: cover;
+        
+    }
+</style>
+<body >
+    <div class="d1">
+        <h1></h1>
+            <!-- <img src="{% static 'main1.jpg' %}" alt="" /> -->
+        </div>   
+    <!-- <p>
+        Data visualization is the representation of data through use of common graphics, such as charts, plots, infographics, and even animations. These visual displays of information communicate complex data relationships and data-driven insights in a way that is easy to understand.
+    </p>
+    </div>
+    
+    
+    <div style="margin:25px;">
+    
+    <img src="{% static 'Pic2.png' %}" alt="" />
+    <p>
+        Data and information visualization (data viz or info viz) is an interdisciplinary field that deals with the graphic representation of data and information. It is a particularly efficient way of communicating when the data or information is numerous as for example a time series.
+    </p>
+    <img src="{% static 'Pic3.png' %}" alt="" />
+    <p>
+    It is also the study of visual representations of abstract data to reinforce human cognition. The abstract data include both numerical and non-numerical data, such as text and geographic information. It is related to infographics and scientific visualization. One distinction is that it's information visualization when the spatial representation (e.g., the page layout of a graphic design) is chosen, whereas it's scientific visualization when the spatial representation is given.
+    
+    </p>
+    
+    <img src="{% static 'Pic4.png' %}" alt="" />
+    
+    <p>
+    From an academic point of view, this representation can be considered as a mapping between the original data (usually numerical) and graphic elements (for example, lines or points in a chart). The mapping determines how the attributes of these elements vary according to the data. In this light, a bar chart is a mapping of the length of a bar to a magnitude of a variable. Since the graphic design of the mapping can adversely affect the readability of a chart, mapping is a core competency of Data visualization.
+    
+    </p>
+    
+    
+    </div>
+    
+    <div style="margin:25px;">
+    <img src="{% static 'Pic5.jpg' %}" alt="" />
+    <p>
+    Data and information visualization has its roots in the field of statistics, as early as the 18th century, and is therefore generally considered a branch of descriptive statistics. However, because both design skills and statistical and computing skills are required to visualize effectively, it is argued by authors such as Gershon and Page that it is both an art and a science.
+    
+    
+    </p>
+    
+    
+    </div> -->
+
+    
+</body>
+</html>
+{% endblock %}

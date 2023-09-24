@@ -1,0 +1,70 @@
+<!-- index.html -->
+{% extends 'adminheader.html' %}
+{% block content %}
+{% load static %}
+
+<html>
+<head>
+<title>CanvasJS Python Charts</title>
+<script>
+  window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer", {
+      title: {
+        text: "Covid Cases in terms of Countries"
+      },
+      animationEnabled: true,
+      axisY: {
+        title: "Count"
+      },
+      toolTip: {
+        shared: true
+      },
+      legend: {
+        cursor: "pointer",
+        itemclick: function(e) {
+          if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+            e.dataSeries.visible = false;
+          }
+          else {
+            e.dataSeries.visible = true;
+          }
+          chart.render();
+        }
+      },
+      data: [{
+        type: "stackedArea",
+        name: "Covid Cases",
+        showInLegend: true,
+        yValueFormatString: "0.#",
+        markerSize: 0,
+        dataPoints: {{ areadata|safe }}
+      }]
+    });
+    chart.render();
+  }
+</script>
+<style>
+  .highlighted-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(78, 34, 181);
+    color: white;
+    text-decoration: none;
+    margin-right: 30px;
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  </style>
+</head>
+<body>
+    <div id="chartContainer" style="width: 100%; height: 360px;"></div>
+    <script src="{% static 'canvasjs.min.js' %}"></script>
+
+    <div class="text-right">
+      <a href="/adminmainpage/" class="highlighted-link">Back</a>
+    </div>
+</body>
+</html>
+{% endblock %}

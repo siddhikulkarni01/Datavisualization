@@ -1,0 +1,157 @@
+{% extends 'commonheader.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Data Visualization</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fffcfc;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .intro {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+        .intro h2 {
+            margin: 0;
+            font-size: 28px;
+            color: #333;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #666;
+        }
+        .intro ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding-left: 0;
+            color: #666;
+            line-height: 1.5;
+        }
+        .contact {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 18px;
+            color: #555;
+        }
+        .contact a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+      
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align:center;
+            padding: 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .content {
+            margin-top: 20px;
+        }
+        .content h2 {
+            
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .content p {
+            line-height: 1.6;
+            color: #666;
+        }
+        .visualization {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .visualization img {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+
+       
+        h3 {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: rgb(4, 4, 19); /* Change the text color to blue */
+    font-size: 24px; /* Set the font size to 24 pixels */
+    text-decoration: underline; /* Add underline to the text */
+  }
+
+  /* Styling for p tag */
+  p {
+    color: rgb(103, 96, 96); /* Change the text color to black */
+    font-size: 16px; /* Set the font size to 16 pixels */
+    line-height: 1.5; 
+  }
+
+  h4 {
+     
+    color: rgb(103, 96, 96); /* Change the text color to black */
+    font-size: 16px; /* Set the font size to 16 pixels */
+    line-height: 1.5; 
+    text-align: center;
+  }
+  
+        
+    </style>
+</head>
+<body>
+    <header>
+    <center> <h1>Welcome to our website!</h1></center>
+    </header>
+    <div class="container">
+        <div class="intro">
+    <center><h2></h2></center><br><br>
+        <ul>
+            <li>The goal of the data visualisation mini-project is to convey and explore insights from a dataset using visuals.</li>
+            <li>Data cleansing, exploration, analysis, and visualisation are a few of the stages that the project goes through.</li>
+            <li> Using statistical methods and tools allows for the extraction of insights from the data during the analysis stage.</li>
+            <li> The creation of visualisations that effectively explain the findings to stakeholders can be done using these insights.</li>
+            <li> The kinds of visualisations employed will vary depending on the data’s characteristics and the insights being conveyed.</li>
+            <li> Typical visualisations include graphs, maps, and charts.The final visualisation should effectively communicate the learnings from the study and be aesthetically pleasing and simple to understand.</li>
+
+        </ul>
+        <br>
+        <br>
+        <hr><br>
+
+        <h4>Note : The CSV file upload will work when the x-axis and Y-axis are labels and all other data are numerical data.if it doesnot fits the requirement it will generate error. here is the description for all types of chart available on this website for more query contact us :) </h4>
+        
+        <br>
+        <div  class="contact">
+            <p>Contact Us: <a href="mailto:pyspider@gmail.com">pyspider@gmail.com</a></p>
+        </div>
+        </div><hr><br>
+        
+    </div>
+
+</body>
+</html>
+{% endblock %}

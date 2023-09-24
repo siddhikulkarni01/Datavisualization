@@ -1,0 +1,76 @@
+<!-- index.html -->
+{% extends 'adminheader.html' %}
+{{usertype}}
+{% block content %}
+{% load static %}
+<html>
+<head>
+    <style type="text/css">
+    table,tr,th,td
+    {
+        font-name:arial;
+        border:1px solid black;
+        border-collapse:collapse;
+        width:80%;
+        margin-left:100px;
+    }
+    th,td
+    {
+    width:200px;
+    height:50px;
+    text-align:center;
+    font-family:verdana;
+    }
+    </style>
+    <script src="{% static 'canvasjs.min.js' %}"></script>
+<script>
+    window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer", {
+          theme: "light2",
+          animationEnabled: true,
+          exportEnabled: true,
+          title:{
+            text:"All Data in Bar Chart"
+          },
+          subtitles: [{
+            text: "Bar Values"
+          }],
+          axisY2: [{
+            suffix: "Count",
+            labelAngle: 0,
+            labelMaxWidth: 150,
+            lineThickness: 1
+          }],
+          axisX: {
+            reversed: true
+          },
+          data: [{
+            type: "bar",
+            yValueFormatString: "#.00 Count",
+            axisYType: "secondary",
+            dataPoints: {{ data_points|safe }}
+          }]
+        });
+        chart.render();
+
+    }
+</script>
+</head>
+<body>
+<div id="chartContainer" style="width: 100%; height: 360px;"></div>
+<!--<img src="{% static 'barchartall.jpg' %}" width="1400px" height="500px"/>-->
+<br>
+    <br>
+    <table>
+        {% for temp in data1 %}
+            <tr>
+            {% for x in temp %}
+                <th>{{x}}</th>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+        </table>
+<br>
+</body>
+</html>
+{% endblock %}

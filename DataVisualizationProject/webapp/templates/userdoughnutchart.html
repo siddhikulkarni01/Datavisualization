@@ -1,0 +1,54 @@
+<!-- index.html -->
+{% extends 'userheader.html' %}
+{% block content %}
+{% load static %}
+<html>
+<head>
+<script>
+  window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer",{
+      theme: "light2",
+      animationEnabled: true,
+      exportEnabled: true,
+      title: {
+        text: "Displaying Dougnut Chart",
+        dockInsidePlotArea: true,
+        verticalAlign: "center",
+        maxWidth: 140,
+        fontSize: 22
+      },
+      data: [{
+        type: "doughnut",
+        indexLabel: "{label} - {y}",
+        yValueFormatString: "#,##0.0\"\"",
+        startAngle: 90,
+        dataPoints: {{ doughnut_data|safe }}
+      }]
+    });
+    chart.render();
+  }
+</script>
+</head>
+<style>
+  .highlighted-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(78, 34, 181);
+    color: white;
+    text-decoration: none;
+    margin-right: 30px;
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  </style>
+<body>
+    <div id="chartContainer" style="width: 100%; height: 360px;"></div>
+    <script src="{% static 'canvasjs.min.js' %}"></script>
+    <div class="text-right">
+      <a href="/adminmainpage/" class="highlighted-link">Back</a>
+    </div>
+</body>
+</html>
+{% endblock %}
